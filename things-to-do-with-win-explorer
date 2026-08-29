@@ -3,6 +3,11 @@ if you ctrl+double click on a directory it actually opens a new window.
 activate location bar: alt+d or ctrl+l
 in location bar, make a new directory:
 cmd /c mkdir newdir
+open a command window here: in location bar, type and enter:
+cmd .
+
+open an explorer window at the command window directory:
+explorer .
 
 explorer messed up and glitchy and unresponsive?
 taskkill /f /im explorer.exe
@@ -13,7 +18,9 @@ ipconfig /release *
 ipconfig /renew *
 
 alt+space to activate right click title bar menu,
-then r to restore, x to maximize, s to resize (followed by arrow keys), and m to move (followed by arrow key)
+then r to restore, c to close, x to maximize, s to resize (followed by arrow keys), and m to move (followed by arrow key)
+
+if you shift+rightclick you get the normal oldschool context menu instead of the new one. the oldschool one has the normal context menu extension things.
 
 use detail view and sort by date created or whatever.
 use ctrl+win+numbers to activate taskbar icons without triggering the multiple windows select popup
