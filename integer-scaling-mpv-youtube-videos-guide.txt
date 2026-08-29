@@ -1,0 +1,128 @@
+C:\Users\%username%\AppData\Roaming\mpv\mpv.conf
+contained:
+
+hidpi-window-scale=no
+[pixel]
+keepaspect=yes
+scale=nearest
+cscale=nearest
+dscale=nearest
+correct-downscaling=no
+
+installed mpv.exe with choco install mpvio
+"C:\ProgramData\chocolatey\lib\mpvio.install\tools\mpv.exe"
+copy yt-dlp.exe to the mpv directory (yt-dlp.exe at https://github.com/yt-dlp/yt-dlp)
+
+lua script "C:\Users\%username%\AppData\Roaming\mpv\scripts\integer-fit.lua"
+as follows:, and controls
+Controls
+Key	Action
+i	Start at 1×, then cycle 2×, 3×, 4× … up to 12×
+Shift+I	Cycle backward
+Ctrl+I	Reset to original video zoom/pan
+
+ran
+
+mpv -v --profile=pixel https://www.youtube.com/watch?v=[videoidhere]
+
+///////////////////////////
+local mp = require("mp")
+
+local scale = 1
+local original_zoom = 0
+local active = false
+
+local function n(name, fallback)
+    return mp.get_property_number(name, fallback) or fallback
+end
+
+local function get_displayed_video_size()
+    local vw = n("video-params/dw", 0)
+    local vh = n("video-params/dh", 0)
+    local sw = n("display-width", 0)
+    local sh = n("display-height", 0)
+
+    if vw <= 0 or vh <= 0 or sw <= 0 or sh <= 0 then
+        return nil
+    end
+
+    -- Normal fullscreen fit with keepaspect=yes, zoom=0.
+    local fit = math.min(sw / vw, sh / vh)
+    return vw * fit, vh * fit, vw, vh, sw, sh
+end
+
+local function apply_integer_scale(k)
+    local fit_w, fit_h, vw, vh, sw, sh = get_displayed_video_size()
+    if not fit_w then
+        mp.osd_message("Integer scale: dimensions unavailable", 3)
+        return
+    end
+
+    -- Desired size is source × k. Convert desired/current-fitted ratio to mpv zoom.
+    local desired_w = vw * k
+    local desired_h = vh * k
+    local ratio = math.min(desired_w / fit_w, desired_h / fit_h)
+    local zoom = math.log(ratio) / math.log(2)
+
+    mp.set_property_bool("keepaspect", true)
+    mp.set_property_number("video-pan-x", 0)
+    mp.set_property_number("video-pan-y", 0)
+    mp.set_property_number("video-zoom", zoom)
+
+    mp.osd_message(string.format(
+        "Integer scale %dx: %dx%d  (%s)",
+        k,
+        math.floor(desired_w + 0.5),
+        math.floor(desired_h + 0.5),
+        (desired_w > sw or desired_h > sh) and "cropped" or "fits"
+    ), 3)
+end
+
+local function next_scale()
+    if not active then
+        original_zoom = n("video-zoom", 0)
+        active = true
+        scale = 1
+    else
+        scale = scale + 1
+        if scale > 12 then
+            scale = 1
+        end
+    end
+
+    apply_integer_scale(scale)
+end
+
+local function previous_scale()
+    if not active then
+        original_zoom = n("video-zoom", 0)
+        active = true
+        scale = 1
+    else
+        scale = scale - 1
+        if scale < 1 then
+            scale = 12
+        end
+    end
+
+    apply_integer_scale(scale)
+end
+
+local function reset()
+    mp.set_property_number("video-zoom", original_zoom)
+    mp.set_property_number("video-pan-x", 0)
+    mp.set_property_number("video-pan-y", 0)
+    active = false
+    scale = 1
+    mp.osd_message("Integer scale reset", 2)
+end
+
+mp.add_key_binding("i", "integer-scale-next", next_scale)
+mp.add_key_binding("I", "integer-scale-previous", previous_scale)
+mp.add_key_binding("Ctrl+i", "integer-scale-reset", reset)
+
+mp.register_event("file-loaded", function()
+    active = false
+    scale = 1
+    original_zoom = 0
+end)
