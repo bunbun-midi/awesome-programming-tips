@@ -61,7 +61,18 @@ funny that vst3s always install to that vst3 directory though
 
 fastcopy happens to preserve the actual date-created information when you copy a large number of files. you know that the date-created gets reset to the copy date if you copy a file which is totally messed up if you use date-created to know which files were most recently made.
 
-some random info:
+to remap the copilot key, in autohotkey it's +#f23::RAlt
+
+git commands i use
+git log --oneline
+^ see what's in the commit history
+
+v when im in the project directory and want to make a commit
+git add -A
+git commit -m "my commit message"
+
+some random info i pasted:
+prompt to perplexity: list of msc and cpl things to run
 
 You can type these into Win + R, Command Prompt, PowerShell, or a Start-menu search. .msc files open Microsoft Management Console tools; .cpl files open classic Control Panel applets. Microsoft documents the general control <applet> approach, though some legacy items have been replaced or redirected by Windows 11 Settings.
 
