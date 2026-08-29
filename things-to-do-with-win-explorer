@@ -1,0 +1,234 @@
+activate location bar: alt+d or ctrl+l
+in location bar, make a new directory:
+cmd /c mkdir newdir
+
+explorer messed up and glitchy and unresponsive?
+taskkill /f /im explorer.exe
+c:\windows\explorer.exe
+
+internet not work :(
+ipconfig /release *
+ipconfig /renew *
+
+alt+space to activate right click title bar menu,
+then r to restore, x to maximize, s to resize (followed by arrow keys), and m to move (followed by arrow key)
+
+use detail view and sort by date created or whatever.
+use ctrl+win+numbers to activate taskbar icons without triggering the multiple windows select popup
+
+some random info:
+
+You can type these into Win + R, Command Prompt, PowerShell, or a Start-menu search. .msc files open Microsoft Management Console tools; .cpl files open classic Control Panel applets. Microsoft documents the general control <applet> approach, though some legacy items have been replaced or redirected by Windows 11 Settings.
+
+Most useful .msc consoles
+Run command	Opens	Useful for
+compmgmt.msc	Computer Management	One console containing Event Viewer, Task Scheduler, Device Manager, Disk Management, Services, Shared Folders, etc.
+devmgmt.msc	Device Manager	Drivers, devices, USB/audio/MIDI hardware, hidden devices
+diskmgmt.msc	Disk Management	Partitions, drive letters, VHDs, volumes
+eventvwr.msc	Event Viewer	System/app logs, crashes, driver events, service failures
+services.msc	Services	Start/stop/configure Windows and third-party services
+taskschd.msc	Task Scheduler	Scheduled tasks, startup automation, triggers
+perfmon.msc	Performance Monitor	Counters, Data Collector Sets, performance logs
+resmon	Resource Monitor	Per-process CPU, disk, network, memory activity
+msinfo32	System Information	Hardware, drivers, Secure Boot, BIOS, loaded modules
+msconfig	System Configuration	Boot options and diagnostic startup
+gpedit.msc	Local Group Policy Editor	Local policy settings; normally Pro/Enterprise/Education, not Home
+secpol.msc	Local Security Policy	Security policy, audit policy, user-right assignment; usually Pro+
+lusrmgr.msc	Local Users and Groups	Local accounts/groups; normally Pro+
+certmgr.msc	Certificates — Current User	Inspect/import/export user certificates
+certlm.msc	Certificates — Local Computer	Machine certificate stores; run elevated when needed
+wf.msc	Windows Defender Firewall with Advanced Security	Inbound/outbound firewall rules and connection security
+gpresult /h "%USERPROFILE%\Desktop\gpresult.html"	Group Policy report	Generates an HTML report of applied policy
+rsop.msc	Resultant Set of Policy	GUI view of effective policy settings; availability can vary
+fsmgmt.msc	Shared Folders	SMB shares, open files, connected users
+printmanagement.msc	Print Management	Printers, drivers, ports; normally Pro+
+comexp.msc	Component Services	COM+, DCOM permissions/configuration
+dcomcnfg	Component Services / DCOM config	Same management area as Component Services
+wmimgmt.msc	WMI Control	WMI repository status and security
+secpol.msc	Local Security Policy	Security options, auditing, user rights
+azman.msc	Authorization Manager	Legacy authorization tool; may not be installed/usable
+tpm.msc	TPM Management	TPM readiness, status, ownership information
+devmgmt.msc	Device Manager	Device power management and driver troubleshooting
+optionalfeatures	Windows Features	Enable/disable .NET, Hyper-V components, SMB, WSL-related features
+napclcfg.msc	NAP Client Configuration	Obsolete on current Windows; usually not useful
+compmgmt.msc, devmgmt.msc, diskmgmt.msc, eventvwr.msc, services.msc, and taskschd.msc are the main everyday administrative consoles. Some, including Group Policy and Local Users and Groups, are unavailable in standard Windows Home editions.
+
+Classic .cpl applets
+Run command	Opens
+appwiz.cpl	Programs and Features — uninstall/change installed classic programs
+optionalfeatures	Turn Windows features on or off
+mmsys.cpl	Sound — Playback, Recording, Sounds, Communications tabs
+control mmsys.cpl,,0	Sound → Playback tab
+control mmsys.cpl,,1	Sound → Recording tab
+control mmsys.cpl,,2	Sound → Sounds tab
+control mmsys.cpl,,3	Sound → Communications tab
+main.cpl	Mouse Properties
+main.cpl mouse	Mouse Properties
+main.cpl keyboard	Keyboard Properties
+main.cpl joysticks	Game Controllers
+joy.cpl	Game Controllers
+timedate.cpl	Date and Time
+intl.cpl	Region
+control input.dll	Language/input-related classic settings
+inetcpl.cpl	Internet Options
+firewall.cpl	Windows Defender Firewall basic interface
+wscui.cpl	Security and Maintenance
+powercfg.cpl	Power Options
+sysdm.cpl	System Properties
+sysdm.cpl ,3	System Properties → Advanced tab
+sysdm.cpl ,4	System Properties → System Protection tab
+systempropertiesadvanced	Advanced System Properties
+systempropertiesperformance	Performance Options
+systempropertiesprotection	System Protection
+systempropertiescomputername	Computer Name tab
+desk.cpl	Legacy Display Properties entry; commonly redirects to Settings in Windows 11
+control color	Classic Color Management
+colorcpl.exe	Color Management
+fonts	Fonts folder
+control fonts	Fonts Control Panel folder
+printers	Printers folder / Devices and Printers
+control printers	Devices and Printers
+sticpl.cpl	Scanners and Cameras; legacy/limited on current Windows
+telephon.cpl	Phone and Modem
+irprops.cpl	Infrared; legacy/usually absent
+bthprops.cpl	Bluetooth properties; availability varies
+wfs.exe	Windows Fax and Scan, if installed
+tabletpc.cpl	Pen and Touch / Tablet PC settings; availability varies
+The useful audio entries are especially handy: mmsys.cpl bypasses Settings and opens the familiar classic Sound panel directly, including individual Playback and Recording tabs. Microsoft’s command reference lists the Control Panel invocation patterns for sound, mouse, keyboard, Game Controllers, Internet Options, regional settings, and more.
+
+Settings URI shortcuts
+Windows 11 increasingly redirects classic panels to Settings. These ms-settings: URIs are often faster and more reliable:
+
+Run command	Opens
+ms-settings:	Settings home
+ms-settings:display	Display
+ms-settings:display-advanced	Advanced display
+ms-settings:display-advancedgraphics	Graphics settings
+ms-settings:sound	Sound
+ms-settings:sound-devices	Sound output/input device list
+ms-settings:appsfeatures	Installed apps
+ms-settings:defaultapps	Default apps
+ms-settings:startupapps	Startup apps
+ms-settings:network	Network & internet
+ms-settings:network-wifi	Wi‑Fi
+ms-settings:network-ethernet	Ethernet
+ms-settings:network-vpn	VPN
+ms-settings:prox	Proxy
+ms-settings:windowsupdate	Windows Update
+ms-settings:windowsupdate-history	Update history
+ms-settings:privacy	Privacy & security
+ms-settings:privacy-microphone	Microphone privacy permissions
+ms-settings:privacy-camera	Camera privacy permissions
+ms-settings:bluetooth	Bluetooth & devices
+ms-settings:connecteddevices	Bluetooth and connected devices
+ms-settings:wheel	Mouse
+ms-settings:keyboard	Keyboard
+ms-settings:colors	Personalization → Colors
+ms-settings:themes	Themes
+ms-settings:taskbar	Taskbar
+ms-settings:personalization-start	Start settings
+ms-settings:apps-volume	Volume mixer / per-app audio
+ms-settings:gaming-gamedvr	Game Bar / capture settings
+ms-settings:gaming-gamebar	Xbox Game Bar
+ms-settings:gaming-gamemode	Game Mode
+ms-settings:recovery	Recovery
+ms-settings:activation	Activation
+ms-settings:about	About
+ms-settings:storagesense	Storage
+ms-settings:storagesense	Storage Sense
+ms-settings:multitasking	Multitasking / Snap
+ms-settings:remotedesktop	Remote Desktop
+ms-settings:developers	For developers
+ms-settings:windowsdefender	Windows Security
+Useful non-.msc diagnostics
+These are worth pinning or making Run-dialog aliases for:
+
+Command	Opens / does
+taskmgr	Task Manager
+resmon	Resource Monitor
+perfmon /res	Resource Monitor
+perfmon /rel	Reliability Monitor
+control /name Microsoft.Troubleshooting	Legacy troubleshooting index
+dxdiag	DirectX Diagnostic Tool
+msinfo32	System Information
+winver	Windows version/build dialog
+winver	Windows build/version
+systeminfo	Detailed system information in Command Prompt
+powercfg /batteryreport	Writes a battery health report for laptops
+powercfg /energy	Generates a power-efficiency diagnostic report; run elevated
+powercfg /requests	Shows apps/drivers blocking sleep/display sleep
+powercfg /sleepstudy	Modern Standby report, on supported systems
+cleanmgr	Disk Cleanup
+cleanmgr /sageset:1	Configure a reusable Disk Cleanup profile
+cleanmgr /sagerun:1	Run the configured Cleanup profile
+netplwiz	User Accounts classic dialog
+control userpasswords2	Same User Accounts dialog
+credwiz	Backup/restore Windows Credentials
+rstrui	System Restore
+sdclt	Legacy Backup and Restore entry
+recdisc	Create a system repair disc; legacy/availability varies
+mdsched	Windows Memory Diagnostic
+charmap	Character Map
+osk	On-Screen Keyboard
+magnify	Magnifier
+narrator	Narrator
+snippingtool	Snipping Tool
+psr	Problem Steps Recorder; deprecated but may remain present
+stepsrecorder	Problem Steps Recorder alias, where available
+winword /safe	Starts Word safe mode, if Office installed
+outlook /safe	Starts Outlook safe mode, if Office installed
+Audio, MIDI, and device shortcuts
+Since you work with audio devices and MIDI, these are particularly useful:
+
+text
+mmsys.cpl
+control mmsys.cpl,,0
+control mmsys.cpl,,1
+control mmsys.cpl,,3
+joy.cpl
+devmgmt.msc
+ms-settings:apps-volume
+ms-settings:sound
+ms-settings:privacy-microphone
+A compact troubleshooting sequence:
+
+text
+1. mmsys.cpl                 → confirm default playback/recording device
+2. control mmsys.cpl,,1      → inspect mic/interface inputs
+3. ms-settings:apps-volume   → check per-app output routing and volume
+4. devmgmt.msc               → verify USB interface/driver state
+5. eventvwr.msc              → inspect audio-driver or USB disconnect events
+6. resmon                    → check whether a process is pegging CPU/disk
+Build your own MMC toolbox
+Run:
+
+text
+mmc
+Then choose:
+
+text
+File → Add/Remove Snap-in
+Useful snap-ins to combine into a saved personal .msc file:
+
+Event Viewer
+
+Device Manager
+
+Disk Management
+
+Services
+
+Task Scheduler
+
+Performance Monitor
+
+Local Users and Groups
+
+Certificates — Current User / Local Computer
+
+Shared Folders
+
+Windows Defender Firewall with Advanced Security
+
+WMI Control
+Save it somewhere convenient, for example as a custom Dev Diagnostics.msc. MMC is the host framework for these snap-ins, and .msc consoles are launchable/savable management-console files.
