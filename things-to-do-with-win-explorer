@@ -53,6 +53,14 @@ you should disable unapproved inbound connections in windows firewall and disabl
 maybe you should use sandboxie to run your browser. it's already sandboxed a bit but then it'll be sandboxed more.
 seriously you should not use phantom chrome extension???? use that on your phone or something geez.
 
+stuff that's programs to use:
+procexp.exe procmon.exe everything.exe by voidtools.org autoruns SoundSwitch (replaces audiorouter) pstools wiztree vb-cable 7zfm.exe ocenaudio (audacity so bad) autohotkey mpc-be mpv icecast edcast sonobus notepad++ xlight (ftp server) uniserverz (http server)
+
+if you use vsts just put them in like c:\vstplugins nobody likes their stuff being in program files and it's a good idea to have a subdirectory for free vsts that don't have an installer or registration so you can archive them easily.
+funny that vst3s always install to that vst3 directory though
+
+fastcopy happens to preserve the actual date-created information when you copy a large number of files. you know that the date-created gets reset to the copy date if you copy a file which is totally messed up if you use date-created to know which files were most recently made.
+
 some random info:
 
 You can type these into Win + R, Command Prompt, PowerShell, or a Start-menu search. .msc files open Microsoft Management Console tools; .cpl files open classic Control Panel applets. Microsoft documents the general control <applet> approach, though some legacy items have been replaced or redirected by Windows 11 Settings.
