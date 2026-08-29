@@ -1,0 +1,33 @@
+# Combine takeown (ownership) with aggressive icacls (permissions)
+takeown /f "C:\path\to\folder" /r /d y
+icacls "C:\path\to\folder" /inheritance:r /grant:r %USERNAME%:(OI)(CI)F /t
+
+>>>how to use takeown and icacls and the alt+enter properties -> security dialog to rename files.
+
+>first, run cmd.exe as administrator via Win+R, typing cmd.exe, then hitting ctrl+shift+enter
+>i'm assuming you have a directory with a number of .exe files in it that you want to rename to deactivate them.
+>navigate to the directory.
+>then,
+takeown /f . /r /d y
+>then
+icacls . /inheritance:r /grant:r %username%:(OI)(CI)F /t
+>yes, %username% is your username.
+>now, do
+explorer .
+>now, you can use the search field to filter for *.exe or .exe or whatever
+>then, select the first file and right click it and go to properties (or select it and hit alt+enter)
+>then, go to security, then _E_dit, then A_d_d, then type your username, and hit OK. then activate Allow Full Control checkbox, then hit ok.
+>then, back in the cmd window in that directory
+rename [your.exe] [your.exeb]
+>you can also like, perhaps type [dir *.exe], and then double click on the exe to highlight it and then copy it to paste it and then paste it again and hit a b to append the b to teh end.
+>finish deactivating your .exes as .exeb (the b is for backup)
+>okay. da end.
+
+>few other tips...
+>you can open a cmd window in the directory you're in in explorer by going, alt+d, [cmd .], enter.
+>you can open an explorer to the directory you're in in cmd.exe by going "explorer ."
+>i like to put notepad++ in a path directory and then rename it to notepads.exe and then use the location bar in explorer to type "notepads myfilename.txt" and hit enter to open the file. saves a lot of time.
+>i just used this to rename the filecoauth.exe in the onedrive folder which was constantly doing things.
+>also obviously you should use voidtools everything to find files via wildcards and perhaps bookmark your files with like, strings of #### or $$$$ or something.
+>also keep in mind that ctrl+click on taskbar icons will cycle through stacked windows without the menu as normal
+>and that shift+rightclick on files and folders will reveal "Copy as path".
