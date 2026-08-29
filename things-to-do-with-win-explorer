@@ -1,10 +1,17 @@
 win+e opens windows explorer. this is the file manager. (whoa, it has tabs now?)
 if you ctrl+double click on a directory it actually opens a new window.
+alt+up or backspace will go up a directory.
+if you hit the down arrow the location bar will autocomplete a bit.
+you can click on the breadcrumbs directories to go up to those, or use the arrow thing for a directory dropdown.
 activate location bar: alt+d or ctrl+l
+
 in location bar, make a new directory:
 cmd /c mkdir newdir
+-cmd /c starts cmd and closes it after executing, whereas cmd /k remains. "cmd mkdir newdir" would not work. type cmd /? for help on the command line arguments.
+
 open a command window here: in location bar, type and enter:
 cmd .
+usually if you shift+rightclick you can only open a powershell window there
 
 open an explorer window at the command window directory:
 explorer .
