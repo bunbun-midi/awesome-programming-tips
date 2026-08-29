@@ -1,3 +1,5 @@
+win+e opens windows explorer. this is the file manager. (whoa, it has tabs now?)
+if you ctrl+double click on a directory it actually opens a new window.
 activate location bar: alt+d or ctrl+l
 in location bar, make a new directory:
 cmd /c mkdir newdir
@@ -15,6 +17,27 @@ then r to restore, x to maximize, s to resize (followed by arrow keys), and m to
 
 use detail view and sort by date created or whatever.
 use ctrl+win+numbers to activate taskbar icons without triggering the multiple windows select popup
+
+ctrl+drag to copy, drag to copy to different drives but moves to same drive, alt+drag to create shortcut
+drag favicon to desktops or folders to create shortcut
+drag images from browser to folders in explorer to save image.
+
+shift or ctrl select items, then shift+rightclick and copy as path for long list of items
+
+double click to select word, triple click to select paragraph.
+ctrl + left arrow to move text insertion point left by one word, same for right arrow.
+ctrl + backspace to delete word, ctrl++delete to delete word to the right
+ctrl+shift+left arrow to select word to left, same for right arrow
+
+in cmd, tab autocompletes. "." is the current directory. "cd .." goes up a directory. "cd ..\.." goes up two directories. "cd /d e:\dir\dir\" necessary for nav to different drive.
+type filename.txt will echo filename's contents to command console.
+doskey /h gives command line history for current session
+where *.exe lists exes in path. if you type exes and there are multiple of them, this is the order they are loaded in.
+HELP lists commands.
+net stop server stops your print server
+you should disable unapproved inbound connections in windows firewall and disable a vast majority of existing inbound rules but be careful.
+maybe you should use sandboxie to run your browser. it's already sandboxed a bit but then it'll be sandboxed more.
+seriously you should not use phantom chrome extension???? use that on your phone or something geez.
 
 some random info:
 
