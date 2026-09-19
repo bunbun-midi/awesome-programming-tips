@@ -1,0 +1,15 @@
+in regedit type into the bar
+Computer\HKEY_CLASSES_ROOT\*\shell
+add new key NotepadPlusPlus
+put data as Edit with &ENotepad
+right click on NotepadPlusPlus key, add new key, name it "command", should appear as a subfolder looking thing
+"c:\program files\notepad++\notepad++.exe" "%1"
+
+I had the data say Edit with &ENotepad because the ampersand marks the accelerator key and usually Win 11 has "Send to" using &N so you can't activate the button as quickly but I didn't have anything in the context menu for "E" anyways
+
+and i mean yeah you definitely need to know that
+
+you need to hold the shift key while right clicking to activate the classic context menu
+interestingly enough, did they literally just add CTrl+Shift+C = Copy as Path to the Win11 menu or did i not see it before?
+  but yeah copy as path works with multiple selections (obviously you use ctrl and shift to make those)
+and uhhhh use ctrl + click when clicking on taskbar icons to just activate the windows in order instead of having that multiple window popup thing show up
