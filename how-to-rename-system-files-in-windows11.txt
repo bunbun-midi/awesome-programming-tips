@@ -31,3 +31,13 @@ rename [your.exe] [your.exeb]
 >also obviously you should use voidtools everything to find files via wildcards and perhaps bookmark your files with like, strings of #### or $$$$ or something.
 >also keep in mind that ctrl+click on taskbar icons will cycle through stacked windows without the menu as normal
 >and that shift+rightclick on files and folders will reveal "Copy as path".
+
+/////
+as as matter of fact, the following typically works
+takeown /f . /r /d y
+icacls . /inheritance:r /grant:r %username%:(OI)(CI)F /t
+icacls * /grant "%USERDOMAIN%\%USERNAME%":F
+rename *.dll *.dllb
+rename *.exe *.exeb
+
+however, literally the only files i've found that it doesn't work on are specifically C:\Program Files\WindowsApps\Microsoft.MicrosoftOfficeHub********\ bunch of numbers and letters which is the folder which contains M365Copilot.exe . the other copilot.exe files' directories have all of the exes renamable via these five lines. before i had to manually go into properties and add self username by typing it in etcetera and then hitting full control, which is obviously tedious and difficult to automate considering sleeping a few hundred milliseconds isn't always reliable between control inputs, but i realized that the third line there of five grants the correct permission necessary to rename the dlls and exes. you'll notice that rename *.dll *.dllb does in fact rename all dlls to .dllb, etcetera.
