@@ -1,6 +1,9 @@
 there's a text file with some tips and stuff but mostly the repo hosts a few simple .bat files that you can use
 
 sudow.bat can be run to elevate a command prompt by typing "sudow.bat cmd.exe". not sure why you would really need to since you can just type cmd.exe into the run dialog and hit ctrl+shift+enter and then hit the uac prompt yes, but yeah idk it's a thing at least.
+
 takepwn.bat i used this to deactivate different exes that had copilot and webview in the names.
+
 takepwnACL.bat i realized later that the setacl.exe tool worked better after encountering something where i got "Access denied" for a normal directory that i had made and realizing that the Properties dialog doesn't even work and is slow anyways for multiple files and folders
+
 while you're here check out my file manager fishpheeder at [http://patreon.com/skeyboard](https://www.patreon.com/Skeyboard/posts/fish-pheeder-171072909) it does alt+tab replacement with type to search for window titles and it can launch apps that you've previously had open via that same menu, has USN journaling mechanism ntfs indexing fast search like everything search engine, and has zoomable icons and some other features like importing a list of files and viewing specific filetypes with # and Note columns in detail view to make notes on and track your music programming and video and text project files that have unique filetypes that are spread out over a lot of directories. it has a compact taskbar replacement style, process listing, multi-row type taskbar, icon and detail views. oh and the USN journaling search when ran as admin only so if you need to do drag and drops you can open it as a normal user.
